@@ -33,7 +33,6 @@ class MembersController < ApplicationController
         format.json { render :show, status: :created, location: @member }
         # send out reset password email
       else
-        binding.pry
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @user.member.errors, status: :unprocessable_entity }
       end
